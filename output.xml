@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170823 14:06:09.400" generator="Robot 3.0.2 (Python 3.4.3 on linux)">
+<suite id="s1" source="/mnt/c/Users/roman/RFtest/rm_test.robot" name="Rm Test">
+<test id="s1-t1" name="Remove nonexistant file without ignoring error">
+<kw name="Create test directory">
+<kw library="OperatingSystem" name="Remove Directory">
+<doc>Removes the directory pointed to by the given ``path``.</doc>
+<arguments>
+<arg>${test_dir}</arg>
+<arg>recursive=True</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.452">Removed directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.452" status="PASS" starttime="20170823 14:06:09.450"></status>
+</kw>
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${existant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.454">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/existant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/existant_file.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.454" status="PASS" starttime="20170823 14:06:09.452"></status>
+</kw>
+<kw library="OperatingSystem" name="Create Directory">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${empty_dir}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.456">Created directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/empty_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir/empty_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.456" status="PASS" starttime="20170823 14:06:09.455"></status>
+</kw>
+<kw name="${index} IN RANGE [ 1 | 5 ]" type="for">
+<kw name="${index} = 1" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.459">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.459" status="PASS" starttime="20170823 14:06:09.457"></status>
+</kw>
+<status endtime="20170823 14:06:09.459" status="PASS" starttime="20170823 14:06:09.457"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.461">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.461" status="PASS" starttime="20170823 14:06:09.460"></status>
+</kw>
+<status endtime="20170823 14:06:09.461" status="PASS" starttime="20170823 14:06:09.459"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.464">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.464" status="PASS" starttime="20170823 14:06:09.462"></status>
+</kw>
+<status endtime="20170823 14:06:09.464" status="PASS" starttime="20170823 14:06:09.462"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.466">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.466" status="PASS" starttime="20170823 14:06:09.464"></status>
+</kw>
+<status endtime="20170823 14:06:09.466" status="PASS" starttime="20170823 14:06:09.464"></status>
+</kw>
+<status endtime="20170823 14:06:09.466" status="PASS" starttime="20170823 14:06:09.456"></status>
+</kw>
+<status endtime="20170823 14:06:09.466" status="PASS" starttime="20170823 14:06:09.450"></status>
+</kw>
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${nonexistant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.468">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/nonexistant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/nonexistant_file.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.468" status="PASS" starttime="20170823 14:06:09.467"></status>
+</kw>
+<kw library="rm_test" name="Rm Remove">
+<arguments>
+<arg>${nonexistant_file}</arg>
+</arguments>
+<status endtime="20170823 14:06:09.501" status="PASS" starttime="20170823 14:06:09.468"></status>
+</kw>
+<kw library="rm_test" name="Status Should Be">
+<arguments>
+<arg>rm: невозможно удалить «${nonexistant_file}»: Нет такого файла или каталога</arg>
+</arguments>
+<status endtime="20170823 14:06:09.503" status="PASS" starttime="20170823 14:06:09.502"></status>
+</kw>
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${nonexistant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.506">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/nonexistant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/nonexistant_file.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.506" status="PASS" starttime="20170823 14:06:09.503"></status>
+</kw>
+<status endtime="20170823 14:06:09.507" critical="yes" status="PASS" starttime="20170823 14:06:09.449"></status>
+</test>
+<test id="s1-t2" name="Remove nonexistant file with ignoring error">
+<kw name="Create test directory">
+<kw library="OperatingSystem" name="Remove Directory">
+<doc>Removes the directory pointed to by the given ``path``.</doc>
+<arguments>
+<arg>${test_dir}</arg>
+<arg>recursive=True</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.514">Removed directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.514" status="PASS" starttime="20170823 14:06:09.509"></status>
+</kw>
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${existant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.517">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/existant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/existant_file.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.517" status="PASS" starttime="20170823 14:06:09.515"></status>
+</kw>
+<kw library="OperatingSystem" name="Create Directory">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${empty_dir}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.518">Created directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/empty_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir/empty_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.519" status="PASS" starttime="20170823 14:06:09.517"></status>
+</kw>
+<kw name="${index} IN RANGE [ 1 | 5 ]" type="for">
+<kw name="${index} = 1" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.521">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.521" status="PASS" starttime="20170823 14:06:09.519"></status>
+</kw>
+<status endtime="20170823 14:06:09.521" status="PASS" starttime="20170823 14:06:09.519"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.523">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.523" status="PASS" starttime="20170823 14:06:09.521"></status>
+</kw>
+<status endtime="20170823 14:06:09.523" status="PASS" starttime="20170823 14:06:09.521"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.525">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.525" status="PASS" starttime="20170823 14:06:09.523"></status>
+</kw>
+<status endtime="20170823 14:06:09.525" status="PASS" starttime="20170823 14:06:09.523"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.526">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.527" status="PASS" starttime="20170823 14:06:09.525"></status>
+</kw>
+<status endtime="20170823 14:06:09.527" status="PASS" starttime="20170823 14:06:09.525"></status>
+</kw>
+<status endtime="20170823 14:06:09.527" status="PASS" starttime="20170823 14:06:09.519"></status>
+</kw>
+<status endtime="20170823 14:06:09.527" status="PASS" starttime="20170823 14:06:09.509"></status>
+</kw>
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${nonexistant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.528">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/nonexistant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/nonexistant_file.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.528" status="PASS" starttime="20170823 14:06:09.527"></status>
+</kw>
+<kw library="rm_test" name="Rm Remove">
+<arguments>
+<arg>-f ${nonexistant_file}</arg>
+</arguments>
+<status endtime="20170823 14:06:09.556" status="PASS" starttime="20170823 14:06:09.529"></status>
+</kw>
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${nonexistant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.558">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/nonexistant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/nonexistant_file.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.558" status="PASS" starttime="20170823 14:06:09.557"></status>
+</kw>
+<status endtime="20170823 14:06:09.558" critical="yes" status="PASS" starttime="20170823 14:06:09.508"></status>
+</test>
+<test id="s1-t3" name="Remove existant file">
+<kw name="Create test directory">
+<kw library="OperatingSystem" name="Remove Directory">
+<doc>Removes the directory pointed to by the given ``path``.</doc>
+<arguments>
+<arg>${test_dir}</arg>
+<arg>recursive=True</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.566">Removed directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.566" status="PASS" starttime="20170823 14:06:09.560"></status>
+</kw>
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${existant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.568">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/existant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/existant_file.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.568" status="PASS" starttime="20170823 14:06:09.566"></status>
+</kw>
+<kw library="OperatingSystem" name="Create Directory">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${empty_dir}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.569">Created directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/empty_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir/empty_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.569" status="PASS" starttime="20170823 14:06:09.568"></status>
+</kw>
+<kw name="${index} IN RANGE [ 1 | 5 ]" type="for">
+<kw name="${index} = 1" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.572">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.572" status="PASS" starttime="20170823 14:06:09.570"></status>
+</kw>
+<status endtime="20170823 14:06:09.572" status="PASS" starttime="20170823 14:06:09.570"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.574">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.574" status="PASS" starttime="20170823 14:06:09.572"></status>
+</kw>
+<status endtime="20170823 14:06:09.574" status="PASS" starttime="20170823 14:06:09.572"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.576">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.576" status="PASS" starttime="20170823 14:06:09.574"></status>
+</kw>
+<status endtime="20170823 14:06:09.576" status="PASS" starttime="20170823 14:06:09.574"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.578">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.578" status="PASS" starttime="20170823 14:06:09.576"></status>
+</kw>
+<status endtime="20170823 14:06:09.578" status="PASS" starttime="20170823 14:06:09.576"></status>
+</kw>
+<status endtime="20170823 14:06:09.578" status="PASS" starttime="20170823 14:06:09.569"></status>
+</kw>
+<status endtime="20170823 14:06:09.579" status="PASS" starttime="20170823 14:06:09.560"></status>
+</kw>
+<kw library="OperatingSystem" name="Should Exist">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${existant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.580">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/existant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/existant_file.txt&lt;/a&gt;' exists.</msg>
+<status endtime="20170823 14:06:09.581" status="PASS" starttime="20170823 14:06:09.579"></status>
+</kw>
+<kw library="rm_test" name="Rm Remove">
+<arguments>
+<arg>${existant_file}</arg>
+</arguments>
+<status endtime="20170823 14:06:09.609" status="PASS" starttime="20170823 14:06:09.581"></status>
+</kw>
+<kw library="rm_test" name="Status Should Be">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<status endtime="20170823 14:06:09.611" status="PASS" starttime="20170823 14:06:09.610"></status>
+</kw>
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${existant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.613">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/existant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/existant_file.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.613" status="PASS" starttime="20170823 14:06:09.611"></status>
+</kw>
+<status endtime="20170823 14:06:09.614" critical="yes" status="PASS" starttime="20170823 14:06:09.559"></status>
+</test>
+<test id="s1-t4" name="Remove directory with key -rf">
+<kw library="BuiltIn" name="Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\n#Remove directory and their contents recursively \n#and ignore nonexistant files and never prompt before removing</arg>
+</arguments>
+<status endtime="20170823 14:06:09.616" status="PASS" starttime="20170823 14:06:09.615"></status>
+</kw>
+<kw name="Create test directory">
+<kw library="OperatingSystem" name="Remove Directory">
+<doc>Removes the directory pointed to by the given ``path``.</doc>
+<arguments>
+<arg>${test_dir}</arg>
+<arg>recursive=True</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.620">Removed directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.621" status="PASS" starttime="20170823 14:06:09.616"></status>
+</kw>
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${existant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.623">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/existant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/existant_file.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.623" status="PASS" starttime="20170823 14:06:09.621"></status>
+</kw>
+<kw library="OperatingSystem" name="Create Directory">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${empty_dir}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.624">Created directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/empty_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir/empty_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.624" status="PASS" starttime="20170823 14:06:09.623"></status>
+</kw>
+<kw name="${index} IN RANGE [ 1 | 5 ]" type="for">
+<kw name="${index} = 1" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.627">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.627" status="PASS" starttime="20170823 14:06:09.625"></status>
+</kw>
+<status endtime="20170823 14:06:09.627" status="PASS" starttime="20170823 14:06:09.625"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.630">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.630" status="PASS" starttime="20170823 14:06:09.628"></status>
+</kw>
+<status endtime="20170823 14:06:09.631" status="PASS" starttime="20170823 14:06:09.628"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.634">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.634" status="PASS" starttime="20170823 14:06:09.631"></status>
+</kw>
+<status endtime="20170823 14:06:09.634" status="PASS" starttime="20170823 14:06:09.631"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.636">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.636" status="PASS" starttime="20170823 14:06:09.634"></status>
+</kw>
+<status endtime="20170823 14:06:09.636" status="PASS" starttime="20170823 14:06:09.634"></status>
+</kw>
+<status endtime="20170823 14:06:09.636" status="PASS" starttime="20170823 14:06:09.625"></status>
+</kw>
+<status endtime="20170823 14:06:09.636" status="PASS" starttime="20170823 14:06:09.616"></status>
+</kw>
+<kw library="rm_test" name="Rm Remove">
+<arguments>
+<arg>-rf ${test_dir}</arg>
+</arguments>
+<status endtime="20170823 14:06:09.668" status="PASS" starttime="20170823 14:06:09.636"></status>
+</kw>
+<kw library="rm_test" name="Status Should Be">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<status endtime="20170823 14:06:09.670" status="PASS" starttime="20170823 14:06:09.669"></status>
+</kw>
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${test_dir}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.671">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.671" status="PASS" starttime="20170823 14:06:09.670"></status>
+</kw>
+<status endtime="20170823 14:06:09.671" critical="yes" status="PASS" starttime="20170823 14:06:09.615"></status>
+</test>
+<test id="s1-t5" name="Remove directory prompt once before removing recursively">
+<kw name="Create test directory">
+<kw library="OperatingSystem" name="Remove Directory">
+<doc>Removes the directory pointed to by the given ``path``.</doc>
+<arguments>
+<arg>${test_dir}</arg>
+<arg>recursive=True</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.674">Directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.674" status="PASS" starttime="20170823 14:06:09.674"></status>
+</kw>
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${existant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.676">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/existant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/existant_file.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.677" status="PASS" starttime="20170823 14:06:09.675"></status>
+</kw>
+<kw library="OperatingSystem" name="Create Directory">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${empty_dir}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.679">Created directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/empty_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir/empty_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.679" status="PASS" starttime="20170823 14:06:09.677"></status>
+</kw>
+<kw name="${index} IN RANGE [ 1 | 5 ]" type="for">
+<kw name="${index} = 1" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.684">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.684" status="PASS" starttime="20170823 14:06:09.681"></status>
+</kw>
+<status endtime="20170823 14:06:09.684" status="PASS" starttime="20170823 14:06:09.680"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.686">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.686" status="PASS" starttime="20170823 14:06:09.684"></status>
+</kw>
+<status endtime="20170823 14:06:09.686" status="PASS" starttime="20170823 14:06:09.684"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.688">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.688" status="PASS" starttime="20170823 14:06:09.686"></status>
+</kw>
+<status endtime="20170823 14:06:09.688" status="PASS" starttime="20170823 14:06:09.686"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.690">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.690" status="PASS" starttime="20170823 14:06:09.688"></status>
+</kw>
+<status endtime="20170823 14:06:09.690" status="PASS" starttime="20170823 14:06:09.688"></status>
+</kw>
+<status endtime="20170823 14:06:09.690" status="PASS" starttime="20170823 14:06:09.679"></status>
+</kw>
+<status endtime="20170823 14:06:09.690" status="PASS" starttime="20170823 14:06:09.673"></status>
+</kw>
+<kw library="rm_test" name="Rm Remove">
+<arguments>
+<arg>-rI ${test_dir}</arg>
+<arg>stdin_str=no</arg>
+</arguments>
+<status endtime="20170823 14:06:09.721" status="PASS" starttime="20170823 14:06:09.691"></status>
+</kw>
+<kw library="OperatingSystem" name="Should Exist">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${test_dir}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.723">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir&lt;/a&gt;' exists.</msg>
+<status endtime="20170823 14:06:09.723" status="PASS" starttime="20170823 14:06:09.722"></status>
+</kw>
+<kw library="rm_test" name="Rm Remove">
+<arguments>
+<arg>-rI ${test_dir}</arg>
+<arg>stdin_str=yes</arg>
+</arguments>
+<status endtime="20170823 14:06:09.753" status="PASS" starttime="20170823 14:06:09.724"></status>
+</kw>
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${test_dir}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.755">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.755" status="PASS" starttime="20170823 14:06:09.754"></status>
+</kw>
+<status endtime="20170823 14:06:09.755" critical="yes" status="PASS" starttime="20170823 14:06:09.673"></status>
+</test>
+<test id="s1-t6" name="Remove more than three files with prompt once before removing">
+<kw name="Create test directory">
+<kw library="OperatingSystem" name="Remove Directory">
+<doc>Removes the directory pointed to by the given ``path``.</doc>
+<arguments>
+<arg>${test_dir}</arg>
+<arg>recursive=True</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.757">Directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.757" status="PASS" starttime="20170823 14:06:09.757"></status>
+</kw>
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${existant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.759">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/existant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/existant_file.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.759" status="PASS" starttime="20170823 14:06:09.758"></status>
+</kw>
+<kw library="OperatingSystem" name="Create Directory">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${empty_dir}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.761">Created directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/empty_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir/empty_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.761" status="PASS" starttime="20170823 14:06:09.760"></status>
+</kw>
+<kw name="${index} IN RANGE [ 1 | 5 ]" type="for">
+<kw name="${index} = 1" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.764">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.765" status="PASS" starttime="20170823 14:06:09.762"></status>
+</kw>
+<status endtime="20170823 14:06:09.765" status="PASS" starttime="20170823 14:06:09.761"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.766">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.766" status="PASS" starttime="20170823 14:06:09.765"></status>
+</kw>
+<status endtime="20170823 14:06:09.766" status="PASS" starttime="20170823 14:06:09.765"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.768">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.768" status="PASS" starttime="20170823 14:06:09.767"></status>
+</kw>
+<status endtime="20170823 14:06:09.768" status="PASS" starttime="20170823 14:06:09.767"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.770">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.770" status="PASS" starttime="20170823 14:06:09.768"></status>
+</kw>
+<status endtime="20170823 14:06:09.770" status="PASS" starttime="20170823 14:06:09.768"></status>
+</kw>
+<status endtime="20170823 14:06:09.770" status="PASS" starttime="20170823 14:06:09.761"></status>
+</kw>
+<status endtime="20170823 14:06:09.770" status="PASS" starttime="20170823 14:06:09.757"></status>
+</kw>
+<kw library="OperatingSystem" name="List Files In Directory">
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<arguments>
+<arg>${more_than3_dir}</arg>
+</arguments>
+<assign>
+<var>@{files}</var>
+</assign>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.771">Listing contents of directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir&lt;/a&gt;'.</msg>
+<msg level="INFO" timestamp="20170823 14:06:09.772">4 files:
+test1.txt
+test2.txt
+test3.txt
+test4.txt</msg>
+<msg level="INFO" timestamp="20170823 14:06:09.772">@{files} = [ test1.txt | test2.txt | test3.txt | test4.txt ]</msg>
+<status endtime="20170823 14:06:09.772" status="PASS" starttime="20170823 14:06:09.771"></status>
+</kw>
+<kw name="${file} IN [ @{files} ]" type="for">
+<kw name="${file} = test1.txt" type="foritem">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${str_list}</arg>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<assign>
+<var>${str_list}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.773">${str_list} =  test_dir/more_than3_dir/test1.txt</msg>
+<status endtime="20170823 14:06:09.773" status="PASS" starttime="20170823 14:06:09.773"></status>
+</kw>
+<status endtime="20170823 14:06:09.773" status="PASS" starttime="20170823 14:06:09.773"></status>
+</kw>
+<kw name="${file} = test2.txt" type="foritem">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${str_list}</arg>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<assign>
+<var>${str_list}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.774">${str_list} =  test_dir/more_than3_dir/test1.txt test_dir/more_than3_dir/test2.txt</msg>
+<status endtime="20170823 14:06:09.774" status="PASS" starttime="20170823 14:06:09.774"></status>
+</kw>
+<status endtime="20170823 14:06:09.774" status="PASS" starttime="20170823 14:06:09.773"></status>
+</kw>
+<kw name="${file} = test3.txt" type="foritem">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${str_list}</arg>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<assign>
+<var>${str_list}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.775">${str_list} =  test_dir/more_than3_dir/test1.txt test_dir/more_than3_dir/test2.txt test_dir/more_than3_dir/test3.txt</msg>
+<status endtime="20170823 14:06:09.775" status="PASS" starttime="20170823 14:06:09.775"></status>
+</kw>
+<status endtime="20170823 14:06:09.775" status="PASS" starttime="20170823 14:06:09.774"></status>
+</kw>
+<kw name="${file} = test4.txt" type="foritem">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${str_list}</arg>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<assign>
+<var>${str_list}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.776">${str_list} =  test_dir/more_than3_dir/test1.txt test_dir/more_than3_dir/test2.txt test_dir/more_than3_dir/test3.txt test_dir/more_than3_dir/test4.txt</msg>
+<status endtime="20170823 14:06:09.776" status="PASS" starttime="20170823 14:06:09.775"></status>
+</kw>
+<status endtime="20170823 14:06:09.776" status="PASS" starttime="20170823 14:06:09.775"></status>
+</kw>
+<status endtime="20170823 14:06:09.776" status="PASS" starttime="20170823 14:06:09.772"></status>
+</kw>
+<kw library="rm_test" name="Rm Remove">
+<arguments>
+<arg>-rI ${str_list}</arg>
+<arg>stdin_str=no</arg>
+</arguments>
+<status endtime="20170823 14:06:09.806" status="PASS" starttime="20170823 14:06:09.776"></status>
+</kw>
+<kw name="${file} IN [ @{files} ]" type="for">
+<kw name="${file} = test1.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Exist">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.808">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;' exists.</msg>
+<status endtime="20170823 14:06:09.808" status="PASS" starttime="20170823 14:06:09.807"></status>
+</kw>
+<status endtime="20170823 14:06:09.808" status="PASS" starttime="20170823 14:06:09.807"></status>
+</kw>
+<kw name="${file} = test2.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Exist">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.809">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;' exists.</msg>
+<status endtime="20170823 14:06:09.809" status="PASS" starttime="20170823 14:06:09.809"></status>
+</kw>
+<status endtime="20170823 14:06:09.809" status="PASS" starttime="20170823 14:06:09.808"></status>
+</kw>
+<kw name="${file} = test3.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Exist">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.810">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;' exists.</msg>
+<status endtime="20170823 14:06:09.810" status="PASS" starttime="20170823 14:06:09.809"></status>
+</kw>
+<status endtime="20170823 14:06:09.810" status="PASS" starttime="20170823 14:06:09.809"></status>
+</kw>
+<kw name="${file} = test4.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Exist">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.811">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;' exists.</msg>
+<status endtime="20170823 14:06:09.811" status="PASS" starttime="20170823 14:06:09.810"></status>
+</kw>
+<status endtime="20170823 14:06:09.811" status="PASS" starttime="20170823 14:06:09.810"></status>
+</kw>
+<status endtime="20170823 14:06:09.811" status="PASS" starttime="20170823 14:06:09.807"></status>
+</kw>
+<kw library="rm_test" name="Rm Remove">
+<arguments>
+<arg>-rI ${str_list}</arg>
+<arg>stdin_str=yes</arg>
+</arguments>
+<status endtime="20170823 14:06:09.840" status="PASS" starttime="20170823 14:06:09.811"></status>
+</kw>
+<kw name="${file} IN [ @{files} ]" type="for">
+<kw name="${file} = test1.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.843">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.843" status="PASS" starttime="20170823 14:06:09.842"></status>
+</kw>
+<status endtime="20170823 14:06:09.843" status="PASS" starttime="20170823 14:06:09.841"></status>
+</kw>
+<kw name="${file} = test2.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.844">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.844" status="PASS" starttime="20170823 14:06:09.843"></status>
+</kw>
+<status endtime="20170823 14:06:09.844" status="PASS" starttime="20170823 14:06:09.843"></status>
+</kw>
+<kw name="${file} = test3.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.844">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.845" status="PASS" starttime="20170823 14:06:09.844"></status>
+</kw>
+<status endtime="20170823 14:06:09.845" status="PASS" starttime="20170823 14:06:09.844"></status>
+</kw>
+<kw name="${file} = test4.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.846">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.846" status="PASS" starttime="20170823 14:06:09.845"></status>
+</kw>
+<status endtime="20170823 14:06:09.846" status="PASS" starttime="20170823 14:06:09.845"></status>
+</kw>
+<status endtime="20170823 14:06:09.846" status="PASS" starttime="20170823 14:06:09.841"></status>
+</kw>
+<status endtime="20170823 14:06:09.847" critical="yes" status="PASS" starttime="20170823 14:06:09.756"></status>
+</test>
+<test id="s1-t7" name="Remove more than three files with prompt before every removal">
+<kw name="Create test directory">
+<kw library="OperatingSystem" name="Remove Directory">
+<doc>Removes the directory pointed to by the given ``path``.</doc>
+<arguments>
+<arg>${test_dir}</arg>
+<arg>recursive=True</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.853">Removed directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.853" status="PASS" starttime="20170823 14:06:09.850"></status>
+</kw>
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${existant_file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.855">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/existant_file.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/existant_file.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.855" status="PASS" starttime="20170823 14:06:09.853"></status>
+</kw>
+<kw library="OperatingSystem" name="Create Directory">
+<doc>Creates the specified directory.</doc>
+<arguments>
+<arg>${empty_dir}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.857">Created directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/empty_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir/empty_dir&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.857" status="PASS" starttime="20170823 14:06:09.856"></status>
+</kw>
+<kw name="${index} IN RANGE [ 1 | 5 ]" type="for">
+<kw name="${index} = 1" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.859">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.859" status="PASS" starttime="20170823 14:06:09.857"></status>
+</kw>
+<status endtime="20170823 14:06:09.859" status="PASS" starttime="20170823 14:06:09.857"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.861">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.861" status="PASS" starttime="20170823 14:06:09.860"></status>
+</kw>
+<status endtime="20170823 14:06:09.862" status="PASS" starttime="20170823 14:06:09.859"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.864">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.865" status="PASS" starttime="20170823 14:06:09.862"></status>
+</kw>
+<status endtime="20170823 14:06:09.865" status="PASS" starttime="20170823 14:06:09.862"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw library="OperatingSystem" name="Create File">
+<doc>Creates a file with the given content and encoding.</doc>
+<arguments>
+<arg>${more_than3_dir}/test${index}.txt</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.867">Created file '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;'.</msg>
+<status endtime="20170823 14:06:09.867" status="PASS" starttime="20170823 14:06:09.865"></status>
+</kw>
+<status endtime="20170823 14:06:09.867" status="PASS" starttime="20170823 14:06:09.865"></status>
+</kw>
+<status endtime="20170823 14:06:09.867" status="PASS" starttime="20170823 14:06:09.857"></status>
+</kw>
+<status endtime="20170823 14:06:09.868" status="PASS" starttime="20170823 14:06:09.850"></status>
+</kw>
+<kw library="OperatingSystem" name="List Files In Directory">
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<arguments>
+<arg>${more_than3_dir}</arg>
+</arguments>
+<assign>
+<var>@{files}</var>
+</assign>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.869">Listing contents of directory '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir&lt;/a&gt;'.</msg>
+<msg level="INFO" timestamp="20170823 14:06:09.870">4 files:
+test1.txt
+test2.txt
+test3.txt
+test4.txt</msg>
+<msg level="INFO" timestamp="20170823 14:06:09.870">@{files} = [ test1.txt | test2.txt | test3.txt | test4.txt ]</msg>
+<status endtime="20170823 14:06:09.870" status="PASS" starttime="20170823 14:06:09.868"></status>
+</kw>
+<kw name="${file} IN [ @{files} ]" type="for">
+<kw name="${file} = test1.txt" type="foritem">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${str_list}</arg>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<assign>
+<var>${str_list}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.871">${str_list} =  test_dir/more_than3_dir/test1.txt</msg>
+<status endtime="20170823 14:06:09.871" status="PASS" starttime="20170823 14:06:09.871"></status>
+</kw>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${stdin_str_all_no}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${stdin_str_all_no}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.872">${stdin_str_all_no} = 0</msg>
+<status endtime="20170823 14:06:09.872" status="PASS" starttime="20170823 14:06:09.871"></status>
+</kw>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${stdin_str_all_yes}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${stdin_str_all_yes}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.872">${stdin_str_all_yes} = 1</msg>
+<status endtime="20170823 14:06:09.872" status="PASS" starttime="20170823 14:06:09.872"></status>
+</kw>
+<status endtime="20170823 14:06:09.872" status="PASS" starttime="20170823 14:06:09.870"></status>
+</kw>
+<kw name="${file} = test2.txt" type="foritem">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${str_list}</arg>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<assign>
+<var>${str_list}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.873">${str_list} =  test_dir/more_than3_dir/test1.txt test_dir/more_than3_dir/test2.txt</msg>
+<status endtime="20170823 14:06:09.873" status="PASS" starttime="20170823 14:06:09.872"></status>
+</kw>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${stdin_str_all_no}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${stdin_str_all_no}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.873">${stdin_str_all_no} = 00</msg>
+<status endtime="20170823 14:06:09.873" status="PASS" starttime="20170823 14:06:09.873"></status>
+</kw>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${stdin_str_all_yes}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${stdin_str_all_yes}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.874">${stdin_str_all_yes} = 11</msg>
+<status endtime="20170823 14:06:09.874" status="PASS" starttime="20170823 14:06:09.873"></status>
+</kw>
+<status endtime="20170823 14:06:09.874" status="PASS" starttime="20170823 14:06:09.872"></status>
+</kw>
+<kw name="${file} = test3.txt" type="foritem">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${str_list}</arg>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<assign>
+<var>${str_list}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.874">${str_list} =  test_dir/more_than3_dir/test1.txt test_dir/more_than3_dir/test2.txt test_dir/more_than3_dir/test3.txt</msg>
+<status endtime="20170823 14:06:09.874" status="PASS" starttime="20170823 14:06:09.874"></status>
+</kw>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${stdin_str_all_no}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${stdin_str_all_no}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.875">${stdin_str_all_no} = 000</msg>
+<status endtime="20170823 14:06:09.875" status="PASS" starttime="20170823 14:06:09.875"></status>
+</kw>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${stdin_str_all_yes}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${stdin_str_all_yes}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.876">${stdin_str_all_yes} = 111</msg>
+<status endtime="20170823 14:06:09.876" status="PASS" starttime="20170823 14:06:09.875"></status>
+</kw>
+<status endtime="20170823 14:06:09.876" status="PASS" starttime="20170823 14:06:09.874"></status>
+</kw>
+<kw name="${file} = test4.txt" type="foritem">
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${str_list}</arg>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<assign>
+<var>${str_list}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.876">${str_list} =  test_dir/more_than3_dir/test1.txt test_dir/more_than3_dir/test2.txt test_dir/more_than3_dir/test3.txt test_dir/more_than3_dir/test4.txt</msg>
+<status endtime="20170823 14:06:09.877" status="PASS" starttime="20170823 14:06:09.876"></status>
+</kw>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${stdin_str_all_no}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${stdin_str_all_no}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.877">${stdin_str_all_no} = 0000</msg>
+<status endtime="20170823 14:06:09.877" status="PASS" starttime="20170823 14:06:09.877"></status>
+</kw>
+<kw library="BuiltIn" name="Catenate">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${stdin_str_all_yes}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${stdin_str_all_yes}</var>
+</assign>
+<msg level="INFO" timestamp="20170823 14:06:09.878">${stdin_str_all_yes} = 1111</msg>
+<status endtime="20170823 14:06:09.878" status="PASS" starttime="20170823 14:06:09.877"></status>
+</kw>
+<status endtime="20170823 14:06:09.878" status="PASS" starttime="20170823 14:06:09.876"></status>
+</kw>
+<status endtime="20170823 14:06:09.878" status="PASS" starttime="20170823 14:06:09.870"></status>
+</kw>
+<kw library="rm_test" name="Rm Remove">
+<arguments>
+<arg>-i ${str_list}</arg>
+<arg>stdin_str=${stdin_str_all_no}</arg>
+</arguments>
+<status endtime="20170823 14:06:09.908" status="PASS" starttime="20170823 14:06:09.878"></status>
+</kw>
+<kw name="${file} IN [ @{files} ]" type="for">
+<kw name="${file} = test1.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Exist">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.911">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;' exists.</msg>
+<status endtime="20170823 14:06:09.911" status="PASS" starttime="20170823 14:06:09.910"></status>
+</kw>
+<status endtime="20170823 14:06:09.911" status="PASS" starttime="20170823 14:06:09.910"></status>
+</kw>
+<kw name="${file} = test2.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Exist">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.912">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;' exists.</msg>
+<status endtime="20170823 14:06:09.912" status="PASS" starttime="20170823 14:06:09.911"></status>
+</kw>
+<status endtime="20170823 14:06:09.912" status="PASS" starttime="20170823 14:06:09.911"></status>
+</kw>
+<kw name="${file} = test3.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Exist">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.914">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;' exists.</msg>
+<status endtime="20170823 14:06:09.914" status="PASS" starttime="20170823 14:06:09.913"></status>
+</kw>
+<status endtime="20170823 14:06:09.914" status="PASS" starttime="20170823 14:06:09.913"></status>
+</kw>
+<kw name="${file} = test4.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Exist">
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.915">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;' exists.</msg>
+<status endtime="20170823 14:06:09.915" status="PASS" starttime="20170823 14:06:09.914"></status>
+</kw>
+<status endtime="20170823 14:06:09.915" status="PASS" starttime="20170823 14:06:09.914"></status>
+</kw>
+<status endtime="20170823 14:06:09.915" status="PASS" starttime="20170823 14:06:09.909"></status>
+</kw>
+<kw library="rm_test" name="Rm Remove">
+<arguments>
+<arg>-i ${str_list}</arg>
+<arg>stdin_str=${stdin_str_all_yes}</arg>
+</arguments>
+<status endtime="20170823 14:06:09.944" status="PASS" starttime="20170823 14:06:09.915"></status>
+</kw>
+<kw name="${file} IN [ @{files} ]" type="for">
+<kw name="${file} = test1.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.947">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test1.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.947" status="PASS" starttime="20170823 14:06:09.946"></status>
+</kw>
+<status endtime="20170823 14:06:09.947" status="PASS" starttime="20170823 14:06:09.945"></status>
+</kw>
+<kw name="${file} = test2.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.948">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test2.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.948" status="PASS" starttime="20170823 14:06:09.947"></status>
+</kw>
+<status endtime="20170823 14:06:09.948" status="PASS" starttime="20170823 14:06:09.947"></status>
+</kw>
+<kw name="${file} = test3.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.949">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test3.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.949" status="PASS" starttime="20170823 14:06:09.948"></status>
+</kw>
+<status endtime="20170823 14:06:09.949" status="PASS" starttime="20170823 14:06:09.948"></status>
+</kw>
+<kw name="${file} = test4.txt" type="foritem">
+<kw library="OperatingSystem" name="Should Not Exist">
+<doc>Fails if the given path (file or directory) exists.</doc>
+<arguments>
+<arg>${more_than3_dir}${file}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20170823 14:06:09.950">Path '&lt;a href="file:///mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt"&gt;/mnt/c/Users/roman/RFtest/test_dir/more_than3_dir/test4.txt&lt;/a&gt;' does not exist.</msg>
+<status endtime="20170823 14:06:09.950" status="PASS" starttime="20170823 14:06:09.949"></status>
+</kw>
+<status endtime="20170823 14:06:09.950" status="PASS" starttime="20170823 14:06:09.949"></status>
+</kw>
+<status endtime="20170823 14:06:09.950" status="PASS" starttime="20170823 14:06:09.945"></status>
+</kw>
+<status endtime="20170823 14:06:09.950" critical="yes" status="PASS" starttime="20170823 14:06:09.848"></status>
+</test>
+<status endtime="20170823 14:06:09.952" status="PASS" starttime="20170823 14:06:09.402"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0">Critical Tests</stat>
+<stat pass="7" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" id="s1" name="Rm Test" fail="0">Rm Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
