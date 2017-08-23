@@ -28,7 +28,3 @@ class rm_test(object):
             raise AssertionError("Expected status to be '%s' but was '%s'."
                                  % (expected_status, self._status))
 
-
-if __name__ == "__main__":
-    b = rm_test()
-    b.rm_remove("-rI test_dir/more_than3_dir/test1.txt test_dir/more_than3_dir/test2.txt test_dir/more_than3_dir/test3.txt test_dir/more_than3_dir/test4.txt",stdin_str = '0000' )
