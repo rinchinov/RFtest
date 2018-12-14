@@ -16,4 +16,4 @@ $robot --version
 
 Robot Framework 3.0.2 (Python 3.4.3 on linux)
 
-
+Hi, Dimitry!
